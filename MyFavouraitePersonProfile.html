@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favourite Person Profile</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff1ed, #fce7e3, #fff7f5);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #ff5a43, #ff8a70);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(255, 90, 67, 0.2);
+        }
+
+        .page-header h1 {
+            font-weight: bold;
+        }
+
+        .page-header p {
+            margin-bottom: 0;
+            color: #fff0ec;
+        }
+
+        .profile-card,
+        .code-card {
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(100, 50, 40, 0.08);
+        }
+
+        .card-heading {
+            color: #ff5a43;
+            font-weight: bold;
+        }
+
+        .profile-icon {
+            width: 85px;
+            height: 85px;
+            background: #fff0ec;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 10px auto 20px;
+        }
+
+        .list-group-item {
+            padding: 16px;
+            border-color: #f5e5e1;
+        }
+
+        .card-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .profile-value {
+            color: #333;
+            font-size: 16px;
+        }
+
+        .code-card {
+            background: white;
+        }
+
+        pre {
+            font-size: 14px;
+            color: #ffe0d8;
+            background: #292524;
+            padding: 22px;
+            border-radius: 12px;
+            overflow-x: auto;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #fff0ec;
+            color: #ff5a43;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .footer {
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 25px 18px;
+            }
+
+            .page-header h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body class="py-4">
+
+    <div class="container main-container">
+
+        <!-- Page Header -->
+        <div class="page-header mb-4 text-center">
+            <div style="font-size: 45px;">❤️</div>
+            <h1>My Favourite Person Profile</h1>
+            <p>Getting to know someone special!</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Profile Card -->
+            <div class="col-lg-6">
+
+                <div class="card profile-card h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-center mb-3">
+                            <span class="section-tag">PERSONAL PROFILE</span>
+                            <div class="profile-icon">👤</div>
+                            <h4 class="card-heading">Profile Details</h4>
+                            <p class="text-muted small">
+                                A few details about my favourite person
+                            </p>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+
+                            <li class="list-group-item">
+                                <span class="card-label d-block">Name</span>
+                                <strong class="profile-value" id="name">-</strong>
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="card-label d-block">Relationship</span>
+                                <strong class="profile-value" id="relationship">-</strong>
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="card-label d-block">Favourite Activity</span>
+                                <strong class="profile-value" id="activity">-</strong>
+                            </li>
+
+                            <li class="list-group-item">
+                                <span class="card-label d-block">City</span>
+                                <strong class="profile-value" id="city">-</strong>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- JavaScript Code Card -->
+            <div class="col-lg-6">
+
+                <div class="card code-card h-100">
+
+                    <div class="card-body p-4">
+
+                        <span class="section-tag">JAVASCRIPT LESSON</span>
+
+                        <h5 class="card-heading mt-3">
+                            💻 JavaScript Object Used
+                        </h5>
+
+                        <p class="text-muted small">
+                            The object containing all four profile properties.
+                        </p>
+
+                        <pre id="codeDisplay">// JavaScript object will appear here</pre>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4 footer">
+            © 2026 My Favourite Person Profile | Made with ❤️
+        </div>
+
+    </div>
+
+    <script>
+
+        // ---- YOUR WORK STARTS HERE ----
+
+        // Step 1 - Create the favouritePerson object with four properties
+
+        let favouritePerson = {
+            name: "Rahul",
+            relationship: "Best Friend",
+            activity: "Playing Cricket",
+            city: "Bengaluru"
+        };
+
+        // Step 2 - Use DOT notation to display name and relationship
+
+        document.getElementById("name").textContent =
+            favouritePerson.name;
+
+        document.getElementById("relationship").textContent =
+            favouritePerson.relationship;
+
+        // Step 3 - Use BRACKET notation to display activity and city
+
+        document.getElementById("activity").textContent =
+            favouritePerson["activity"];
+
+        document.getElementById("city").textContent =
+            favouritePerson["city"];
+
+        // Step 4 - Show the object inside the code box
+
+        document.getElementById("codeDisplay").textContent =
+            "let favouritePerson = " +
+            JSON.stringify(favouritePerson, null, 2) + ";";
+
+        // ---- YOUR WORK ENDS HERE ----
+
+    </script>
+
+</body>
+
+</html>
